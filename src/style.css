@@ -82,3 +82,55 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Area Regular";
+  color: #fff;
+  background-color: #212121;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.navigation__menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.navigation__menu-item {
+  list-style-type: none;
+  font-weight: 600;
+}
+
+.navigation__menu-item button {
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.underline {
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  right: 6px;
+  height: 1.5px;
+  width: 2ch;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

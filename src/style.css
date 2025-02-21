@@ -251,6 +251,11 @@ h1.hovering {
   right: 8%;
 }
 
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
   .thumbnail {
     display: none;

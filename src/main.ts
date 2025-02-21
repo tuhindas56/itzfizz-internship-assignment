@@ -1,6 +1,7 @@
 import gsap from "gsap"
 import "./style.css"
 
+const header = document.querySelector(".header") as HTMLElement
 const heroText = document.querySelector("h1") as HTMLHeadingElement
 const heroTextSpans = heroText.querySelectorAll("span") as NodeListOf<HTMLSpanElement>
 const images = document.querySelectorAll(".thumbnail .wrapper img") as NodeListOf<HTMLImageElement>
@@ -49,13 +50,18 @@ thumbnails.forEach((thumbnail) => {
 document.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline({})
 
+  tl.from(header, {
+    opacity: 0,
+    duration: 0.4,
+    delay: 0.4,
+  })
+
   tl.from(heroTextSpans, {
     y: 20,
     duration: 0.6,
     stagger: 0.1,
     opacity: 0,
     clipPath: "inset(100% 0% 0% 0%)",
-    delay: 0.4,
   })
 
   tl.from(

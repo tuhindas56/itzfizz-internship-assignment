@@ -5,6 +5,7 @@ const heroText = document.querySelector("h1") as HTMLHeadingElement
 const heroTextSpans = heroText.querySelectorAll("span") as NodeListOf<HTMLSpanElement>
 const images = document.querySelectorAll(".thumbnail .wrapper img") as NodeListOf<HTMLImageElement>
 const thumbnails = document.querySelectorAll(`.thumbnail`) as NodeListOf<HTMLDivElement>
+const footerLink = document.querySelector(".footer a") as HTMLAnchorElement
 
 thumbnails.forEach((thumbnail) => {
   const thumbnailWrapper = thumbnail.querySelector(".wrapper") as HTMLDivElement
@@ -63,6 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 0,
       opacity: 0,
       duration: 2,
+    },
+    "-=60%"
+  )
+
+  tl.from(
+    footerLink,
+    {
+      opacity: 0,
+      duration: 0.6,
     },
     "-=60%"
   )

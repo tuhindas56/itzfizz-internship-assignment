@@ -99,12 +99,14 @@ body {
   flex-wrap: wrap;
   padding: 2rem 2rem;
   margin-bottom: 2rem;
+  gap: 2rem;
 }
 
 .navigation__menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 1rem 5rem;
+  padding: 0;
 }
 
 .navigation__menu-item {
@@ -116,9 +118,10 @@ body {
   position: relative;
   background-color: transparent;
   color: #fff;
-  border: none;
-  text-transform: uppercase;
   font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  padding: 0;
 }
 
 .underline {
@@ -133,4 +136,116 @@ body {
 a {
   color: #fff;
   text-decoration: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero {
+  position: relative;
+  padding: 4rem;
+  isolation: isolate;
+}
+
+h1 {
+  max-width: 11ch;
+  font-family: DrukWideBold;
+  font-size: clamp(24px, 8vw + 1px, 6rem);
+  text-align: center;
+  filter: none;
+  transition: color 0.1s ease-in-out, filter 0.1s ease-in-out;
+  user-select: none;
+  pointer-events: none;
+}
+
+h1.hovering {
+  color: #212121;
+  filter: drop-shadow(0px 0px 1px #4c4c4c) drop-shadow(0px 0px 1px #4c4c4c);
+}
+
+.thumbnail {
+  position: absolute;
+  width: 320px;
+  height: 200px;
+  z-index: -1;
+}
+
+.thumbnail .wrapper {
+  display: inline-block;
+  height: inherit;
+  width: inherit;
+}
+
+.hover-detector {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.thumbnail img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.thumbnail .thumbnail__text {
+  height: 3lh;
+  transform: translate(50%, -45%);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.thumbnail .thumbnail__text h2 {
+  width: 8ch;
+  font-family: DrukWideBold;
+  font-size: 2.2rem;
+}
+
+.thumbnail .thumbnail__text span {
+  font-size: 0.9rem;
+}
+
+.thumbnail .placeholder {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #4c4c4c;
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+  z-index: -1;
+}
+
+.thumbnail:hover .placeholder {
+  opacity: 0;
+}
+
+.thumbnail.thumbnail-tl {
+  top: 16%;
+  left: 8%;
+}
+
+.thumbnail.thumbnail-tr {
+  top: 0;
+  right: 16%;
+}
+
+.thumbnail.thumbnail-bl {
+  bottom: 0;
+  left: 12%;
+}
+
+.thumbnail.thumbnail-br {
+  bottom: 20%;
+  right: 8%;
+}
+
+@media screen and (max-width: 1024px) {
+  .thumbnail {
+    display: none;
+  }
 }
